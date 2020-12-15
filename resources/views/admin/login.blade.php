@@ -37,7 +37,7 @@
 				
 					<!-- Account Logo -->
 					<div class="account-logo">
-						<a href="index.html"><img src="assets/img/logo2.png" alt="Dreamguy's Technologies"></a>
+						<a href="{{ route('admin.dashboard')}}"><img src="{{ asset('public/adminPanel/assets/img/logo2.png')}}" alt="Dreamguy's Technologies"></a>
 					</div>
 					<!-- /Account Logo -->
 					
@@ -47,7 +47,7 @@
 							<p class="account-subtitle">Access to our dashboard</p>
 							
 							<!-- Account Form -->
-							<form action="index.html">
+							<form action="{{route('admin.dashboard')}}" method="POST">
 								<div class="form-group">
 									<label>Email Address</label>
 									<input class="form-control" type="text">
