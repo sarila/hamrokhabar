@@ -48,17 +48,18 @@
 							
 							<!-- Account Form -->
 							<form action="{{route('admin.dashboard')}}" method="POST">
+								@csrf
 								<div class="form-group">
-									<label>Email Address</label>
-									<input class="form-control" type="text">
+									<label for="email">Email Address</label>
+									<input class="form-control" type="text" name="email" id="email">
 								</div>
 								<div class="form-group">
 									<div class="row">
 										<div class="col">
-											<label>Password</label>
+											<label for="password">Password</label>
 										</div>
 									</div>
-									<input class="form-control" type="password">
+									<input class="form-control" type="password" name="password" id="password">
 								</div>
 								<div class="form-group text-center">
 									<button class="btn btn-primary account-btn" type="submit">Login</button>

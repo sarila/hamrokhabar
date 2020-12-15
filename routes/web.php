@@ -22,3 +22,4 @@ Route::match(['get', 'post'], '/admin/login', 'AdminLoginController@adminLogin')
 //admin dashboard
 Route::match(['get', 'post'], '/admin/dashboard', 'AdminLoginController@adminDashboard')->name('admin.dashboard');
 //admin logout
+Route::get('/admin/logout', 'AdminLoginController@adminLogout')->name('admin.logout');
