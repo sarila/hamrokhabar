@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,10 @@ Route::get('/', function () {
 //login route
 Route::match(['get', 'post'], '/admin/login', 'AdminLoginController@adminLogin')->name('admin.login');
 //admin dashboard
-Route::match(['get', 'post'], '/admin/dashboard', 'AdminLoginController@adminDashboard')->name('admin.dashboard');
+
+Route::group(['middleware' => 'admin'], function(){
+	Route::match(['get', 'post'], '/admin/dashboard', 'AdminLoginController@adminDashboard')->name('admin.dashboard');	
+});
+
 //admin logout
 Route::get('/admin/logout', 'AdminLoginController@adminLogout')->name('admin.logout');

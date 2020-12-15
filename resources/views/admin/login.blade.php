@@ -45,9 +45,20 @@
 						<div class="account-wrapper">
 							<h3 class="account-title">Login</h3>
 							<p class="account-subtitle">Access to our dashboard</p>
+							<!-- shows error message if any -->
+							@include('admin.includes._message')
+                            @if($errors->any())
+                                <div class="alert alert-danger" >
+                                    <ul style="list-style: none; ">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                           @endif
 							
 							<!-- Account Form -->
-							<form action="{{route('admin.dashboard')}}" method="POST">
+							<form action="{{route('admin.login')}}" method="POST">
 								@csrf
 								<div class="form-group">
 									<label for="email">Email Address</label>
