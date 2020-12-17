@@ -41,7 +41,14 @@ class AdminLoginController extends Controller
     	return view('admin.dashboard');
     }
 
+    public function forgetPassword(){
+        return view('admin.forget_password');
+    }
+    //Logout
     public function adminLogout(){
+        Auth::guard('admin')->logout();
+        Session::flash('info_message', 'Logout Successful');
     	return redirect()->route('admin.login');
     }
+
 }

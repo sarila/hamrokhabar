@@ -18,13 +18,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//login route
-Route::match(['get', 'post'], '/admin/login', 'AdminLoginController@adminLogin')->name('admin.login');
-//admin dashboard
 
-Route::group(['middleware' => 'admin'], function(){
-	Route::match(['get', 'post'], '/admin/dashboard', 'AdminLoginController@adminDashboard')->name('admin.dashboard');	
+
+Route::prefix('/admin')->group(function(){
+    Route::group(['middleware' => 'admin'], function (){
+    	//login route
+		Route::match(['get', 'post'], '/admin/login', 'AdminLoginController@adminLogin')->name('admin.login');
+
+    	//for admin dashboard
+		Route::match(['get', 'post'], '/dashboard', 'AdminLoginController@adminDashboard')->name('admin.dashboard');	
+
+	});
+	//admin logout
+	Route::get('/logout', 'AdminLoginController@adminLogout')->name('admin.logout');
+
 });
 
-//admin logout
-Route::get('/admin/logout', 'AdminLoginController@adminLogout')->name('admin.logout');
+Route::get('/forget/password', 'AdminLoginController@forgetPassword')->name('forgetPassword');
+
