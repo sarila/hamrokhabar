@@ -26,7 +26,7 @@ class AdminLoginController extends Controller
     		$this->validate($request, $rules, $customMessages);
 
     		if(Auth::guard('admin')->attempt(['email' => $data['email'], 'password' => $data['password']])){
-    			return redirect()->route('admin.dashboard');
+    			return redirect()->route('adminDashboard');
     		}else{
     			Session::flash('error_message', 'Invalid Email or Password');
     			return redirect()->route('admin.login');

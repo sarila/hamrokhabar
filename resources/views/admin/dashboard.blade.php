@@ -18,9 +18,5 @@
 	<p class="mb-0">Previous Month <span class="text-muted">$7,500</span></p>
 </div>
 </div>
-   </div>
-			<!-- /Page Wrapper -->
-			
-        </div>
-
+   
 @endsection

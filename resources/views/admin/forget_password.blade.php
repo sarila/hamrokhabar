@@ -38,7 +38,7 @@
 				
 					<!-- Account Logo -->
 					<div class="account-logo">
-						<a href="{{ route('admin.dashboard')}}"><img src="{{ asset('public/adminPanel/assets/img/logo2.png')}}" alt="Dreamguy's Technologies"></a>
+						<a href="{{ route('adminDashboard')}}"><img src="{{ asset('public/adminPanel/assets/img/logo2.png')}}" alt="Dreamguy's Technologies"></a>
 					</div>
 					<!-- /Account Logo -->
 					

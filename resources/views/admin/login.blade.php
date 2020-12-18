@@ -37,7 +37,7 @@
 				
 					<!-- Account Logo -->
 					<div class="account-logo">
-						<a href="{{ route('admin.dashboard')}}"><img src="{{ asset('public/adminPanel/assets/img/logo2.png')}}" alt="Dreamguy's Technologies"></a>
+						<a href="{{ route('adminDashboard')}}"><img src="{{ asset('public/adminPanel/assets/img/logo2.png')}}" alt="Dreamguy's Technologies"></a>
 					</div>
 					<!-- /Account Logo -->
 					
@@ -76,7 +76,7 @@
 									<button class="btn btn-primary account-btn" type="submit">Login</button>
 								</div>
 								<div class="account-footer">
-									<p>Forget Password? <a href="javascript:">Reset Password</a></p>
+									<p>Forget Password? <a href="{{route('forgetPassword')}}">Reset Password</a></p>
 								</div>
 							</form>
 							<!-- /Account Form -->
