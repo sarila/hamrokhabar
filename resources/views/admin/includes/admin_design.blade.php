@@ -9,7 +9,7 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="{{ route('adminDashboard') }}" class="logo">
-						<img src="{{ asset('public/adminPanel/assets/img/logo.png') }}" width="40" height="40" alt="">
+						<img src="{{ asset('public/uploads/'.$theme->header_logo) }}" width="40" height="40" alt="">
 					</a>
                 </div>
 				<!-- /Logo -->

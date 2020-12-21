@@ -1,5 +1,5 @@
 @extends('admin.includes.admin_design_v2')
-​
+​@section('title') Theme - {{ $theme->website_name }}   @endsection
 ​
 @section('content')
 

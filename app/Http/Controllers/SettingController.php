@@ -106,4 +106,23 @@ class SettingController extends Controller
             return redirect()->back();
         }
     }
+
+    public function social(){
+        $setting = Setting::first();
+        return view ('admin.social', compact('setting'));
+
+    }
+
+    public function socialSettingUpdate(Request $request, $id){
+            $setting = Setting::findOrFail($id);
+            $data = $request->all();
+            $setting->facebook = $data['facebook'];
+            $setting->twitter = $data['twitter'];
+            $setting->youtube = $data['youtube'];
+            $setting->instagram = $data['instagram'];
+            $setting->save();
+            Session::flash('info_message', 'Social Settings has been updated successfully');
+            return redirect()->back();
+    }
+
 }

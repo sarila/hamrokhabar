@@ -49,10 +49,16 @@ Route::prefix('/admin')->group(function(){
 	//Update Theme
 	Route::post('/theme/update/{id}', 'SettingController@updateTheme')->name('updateTheme');
 
+	//Social Settings
+	Route::get('/setting/social', 'SettingController@social')->name('social');
+	//Update Social Setting
+	Route::post('/social/update/{id}', 'SettingController@socialSettingUpdate')->name('socialSettingUpdate');
+
 	//Admin Profile
 	Route::get('/profile', 'AdminController@adminProfile')->name('adminProfile');
 	//Update Profile
 	Route::post('/profile/update/{id}', 'AdminController@updateProfile')->name('updateProfile');
+
 });
 
 Route::get('/forget/password', 'AdminLoginController@forgetPassword')->name('forgetPassword');

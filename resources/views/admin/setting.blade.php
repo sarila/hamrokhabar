@@ -1,5 +1,5 @@
 @extends('admin.includes.admin_design_v2')
-​
+​@section('title') Site Settings - {{ $theme->website_name }}   @endsection
 ​
 @section('content')
     <div class="content container-fluid">

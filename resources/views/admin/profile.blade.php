@@ -1,6 +1,6 @@
 @extends('admin.includes.admin_design_v2')
 ​
-​
+​@section('title') Profile @endsection
 @section('content')
 
     <!-- Page Content -->

@@ -19,6 +19,9 @@
 					<a href="{{route('setting')}}"><i class="la la-dashboard"></i> <span> Site Setting</span></a>
 				</li>
 				<li>
+					<a href="{{route('social')}}"><i class="la la-facebook"></i> <span> Social Setting</span></a>
+				</li>
+				<li>
 					<a href="{{route('theme')}}"><i class="la la-sliders"></i> <span> Theme Setting</span></a>
 				</li>
 				
