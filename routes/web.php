@@ -40,6 +40,15 @@ Route::prefix('/admin')->group(function(){
 	//Settings
 	Route::get('/setting', 'SettingController@index')->name('setting');
 
+	//updateSettings
+	Route::post('/setting/update/{id}', 'SettingController@updateSetting')->name('updateSetting');
+
+	//Theme
+	Route::get('/setting/theme', 'SettingController@theme')->name('theme');
+
+	//Update Theme
+	Route::post('/theme/update/{id}', 'SettingController@updateTheme')->name('updateTheme');
+
 	//Admin Profile
 	Route::get('/profile', 'AdminController@adminProfile')->name('adminProfile');
 	//Update Profile

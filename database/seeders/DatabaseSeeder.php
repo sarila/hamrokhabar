@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Role;
 use App\Models\Admin;
+use App\Models\Theme;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,16 +21,19 @@ class DatabaseSeeder extends Seeder
         'created_at' => now(),
         'updated_at' => now(),
       ]);
+
       Role::insert([
         'name' => "Admin",
         'created_at' => now(),
         'updated_at' => now(),
       ]);
+
       Role::insert([
         'name' => "Editor",
         'created_at' => now(),
         'updated_at' => now(),
       ]);
+
       Admin::insert([
         'first_name' => "Sushan",
         'last_name' => "Paudyal",
@@ -41,6 +45,7 @@ class DatabaseSeeder extends Seeder
         'created_at' => now(),
         'updated_at' => now(),
       ]);
+
       Setting::insert([
         'site_title' => 'Hamro Khabar',
         'site_title_np' => 'Hamro Khabar',
@@ -54,6 +59,10 @@ class DatabaseSeeder extends Seeder
         'address' => 'Shantinagar, Kathmandu',
         'created_at' => now(),
         'updated_at' => now(),
+      ]);
+      
+      Theme::insert([
+        'website_name' => 'Hamro Khabar',
       ]);
     }
 }
