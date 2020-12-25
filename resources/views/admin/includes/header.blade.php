@@ -28,6 +28,8 @@
 		<!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('public/adminPanel/assets/css/style.css') }}">
 		
+		<!-- Datatable CSS -->
+		<link rel="stylesheet" href="{{ asset('public/template/assets/css/dataTables.bootstrap4.min.css') }}">
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>

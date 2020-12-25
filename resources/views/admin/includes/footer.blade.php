@@ -16,6 +16,9 @@
 		
 		<!-- Custom JS -->
 		<script src="{{asset('public/adminPanel/assets/js/app.js')}}"></script>
+		<!-- Datatable JS -->
+		<script src="{{ asset('public/adminPanel/assets/datatables/datatables.js') }}"></script>
+		<script src="{{ asset('public/adminPanel/assets/datatables/DataTables-1.10.18/js/dataTables.bootstrap4.min.js') }}"></script>
 		@yield('js')
 		
     </body>
