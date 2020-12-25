@@ -48,6 +48,7 @@ class CategoryController extends Controller
             return view ('admin.category.actions', [
                 'model' => $model,
                 'url_show' => route('showCategory', $model->id),
+                'url_edit' => route('editCategory', $model->id),
             ]);
         })
         ->addIndexColumn()
@@ -58,5 +59,31 @@ class CategoryController extends Controller
     public function showCategory($id){
     	$model = Category::Findorfail($id);
     	return view('admin.category.show', compact('model'));
+    }
+
+    public function editCategory($id){
+    	$category = Category::Findorfail($id);
+    	$categories = Category::where('parent_id', '0')->get();
+    	return view('admin.category.edit', compact('category', 'categories'));
+    }
+
+    public function updateCategory(Request $request, $id){
+    	$data = $request->all();
+    	$validateData = $request->validate([
+    		'category_name' => 'required',
+    		'category_name_np'=> 'required'
+    	]); 
+    	$category = Category::Findorfail($id);
+    	$category->parent_id = $data['parent_id'];
+    	$category->category_name = $data['category_name'];
+    	$category->category_name_np = $data['category_name_np'];
+    	$category->slug = Str::slug($data['category_name']);
+    	$category->seo_title = $data['seo_title'];
+    	$category->seo_subtitle = $data['seo_subtitle'];
+    	$category->seo_description = $data['seo_description'];
+    	$category->keywords = $data['keywords'];
+    	$category->save();
+    	Session::flash('info_message', 'Category has been Updated Successfully');
+    	return redirect()->route('category');
     }
 }

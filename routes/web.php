@@ -56,6 +56,8 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/category/show/{id}', 'CategoryController@showCategory')->name('showCategory');
 	//for category Datatables
 	Route::get('/category/Datatable', 'CategoryController@dataTable')->name('dataTable');
+	Route::get('/category/edit/{id}', 'CategoryController@editCategory')->name('editCategory');
+	Route::post('/category/edit/{id}', 'CategoryController@updateCategory')->name('updateCategory');
 
 });
 
