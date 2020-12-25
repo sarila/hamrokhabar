@@ -51,6 +51,13 @@ class CategoryController extends Controller
                 'url_edit' => route('editCategory', $model->id),
             ]);
         })
+        ->editColumn('parent_id', function($model){
+        	if($model->parent_id == 0){
+        		return "Main Category";
+        	} else {
+        		return $model->subCategory->category_name;
+        	}
+        })
         ->addIndexColumn()
         ->rawColumns(['action'])
         ->make(true);
