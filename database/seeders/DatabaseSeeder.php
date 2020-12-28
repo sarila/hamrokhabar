@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Role;
 use App\Models\Admin;
 use App\Models\Theme;
+use App\Models\Setting;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,13 +36,13 @@ class DatabaseSeeder extends Seeder
       ]);
 
       Admin::insert([
-        'first_name' => "Sushan",
-        'last_name' => "Paudyal",
-        'email' => "sushan.paudyal@gmail.com",
+        'firstname' => "Sarila",
+        'lastname' => "Ngakhusi",
+        'email' => "ngakhusisarila@gmail.com",
         'password' => bcrypt('password'),
         'role_id' => 1,
-        'phone' => '9803961735',
-        'address' => 'Shantinagar, Kathmandu',
+        'mobile' => '9861210872',
+        'address' => 'Changunarayan, Bhaktapur',
         'created_at' => now(),
         'updated_at' => now(),
       ]);
@@ -50,6 +51,7 @@ class DatabaseSeeder extends Seeder
         'site_title' => 'Hamro Khabar',
         'site_title_np' => 'Hamro Khabar',
         'site_subtitle' => 'pal pal ko khabar',
+        'site_subtitle_np' => 'pal pal ko khabar',
         'phone_number' => 1234567890,
         'mobile_number' => 1234567890,
         'ads_number' => 1234567890,

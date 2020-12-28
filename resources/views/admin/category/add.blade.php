@@ -75,6 +75,13 @@
                                         <input type="text" class="form-control" name="category_name_np" id="category_name_np" value="{{ old('category_name_np') }}">
                                     </div>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="priority">Display Priority </label>
+                                        <input type="text" class="form-control" name="priority" id="priority" value="{{ old('priority') }}">
+                                    </div>
+                                </div>
                             </div>
 
                             <hr>

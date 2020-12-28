@@ -33,6 +33,7 @@ class CategoryController extends Controller
     	$category->category_name = $data['category_name'];
     	$category->category_name_np = $data['category_name_np'];
     	$category->slug = Str::slug($data['category_name']);
+        $category->priority = $data['priority'];
     	$category->seo_title = $data['seo_title'];
     	$category->seo_subtitle = $data['seo_subtitle'];
     	$category->seo_description = $data['seo_description'];
@@ -43,7 +44,7 @@ class CategoryController extends Controller
     }
 
     public function dataTable(){
-    	$model = Category::latest()->get();
+    	$model = Category::orderBy('priority', 'ASC')->get();
     	return DataTables::of($model)
         ->addColumn('action', function ($model){
             return view ('admin.category.actions', [
@@ -87,6 +88,7 @@ class CategoryController extends Controller
     	$category->category_name = $data['category_name'];
     	$category->category_name_np = $data['category_name_np'];
     	$category->slug = Str::slug($data['category_name']);
+        $category->priority = $data['priority'];
     	$category->seo_title = $data['seo_title'];
     	$category->seo_subtitle = $data['seo_subtitle'];
     	$category->seo_description = $data['seo_description'];

@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('category_name_np');
             $table->string('slug');
             $table->string('parent_id');
+            $table->integer('priority')->default(1);
             $table->timestamps();
         });
     }
