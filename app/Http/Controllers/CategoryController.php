@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use DataTables;
+use DB;
 
 
 class CategoryController extends Controller
@@ -51,13 +52,14 @@ class CategoryController extends Controller
                 'url_edit' => route('editCategory', $model->id),
             ]);
         })
-        ->editColumn('parent_id', function($model){
-        	if($model->parent_id == 0){
-        		return "Main Category";
-        	} else {
-        		return $model->subCategory->category_name;
-        	}
+        ->editColumn('parent_id', function ($model){
+            if($model->parent_id == 0){
+                return "Main Category";
+            } else {
+                return $model->subCategory->category_name;
+            }
         })
+
         ->addIndexColumn()
         ->rawColumns(['action'])
         ->make(true);
@@ -92,5 +94,12 @@ class CategoryController extends Controller
     	$category->save();
     	Session::flash('info_message', 'Category has been Updated Successfully');
     	return redirect()->route('category');
+    }
+
+    public function deleteCategory($id){
+        $category = Category::Findorfail($id);
+        $category->delete();
+        DB::table('categories')->where('parent_id', $id)->delete();
+        return redirect()->back();
     }
 }

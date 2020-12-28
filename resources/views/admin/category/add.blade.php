@@ -52,7 +52,7 @@
                                     <div class="form-group">
                                         <label for="parent_id">Parent Category </label>
                                         <select name="parent_id" id="parent_id" class="form-control select">
-                                            <option value="0">No Parent Category</option>
+                                            <option value="0">Main Category</option>
                                             @foreach($categories as $category)
                                                 @if( $category->parent_id == 0)
                                                 <option value= " {{$category->id}} ">{{$category->category_name}}</option>

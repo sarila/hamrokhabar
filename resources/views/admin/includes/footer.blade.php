@@ -19,6 +19,9 @@
 		<!-- Datatable JS -->
 		<script src="{{ asset('public/adminPanel/assets/datatables/datatables.js') }}"></script>
 		<script src="{{ asset('public/adminPanel/assets/datatables/DataTables-1.10.18/js/dataTables.bootstrap4.min.js') }}"></script>
+		<!-- JS for sweet alert -->
+		<script src="{{ asset('public/adminPanel/assets/js/sweetalert.min.js') }}"></script>
+		<script src="{{ asset('public/adminPanel/assets/js/jquery.sweet-alert.custom.js') }}"></script>
 		@yield('js')
 		
     </body>
