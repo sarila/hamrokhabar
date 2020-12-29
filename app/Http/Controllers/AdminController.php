@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
+use App\Models\Admin;
+
 
 
 class AdminController extends Controller
@@ -95,7 +96,6 @@ class AdminController extends Controller
         $admin->firstname = ucwords(strtolower($data['firstname']));
         $admin->middlename = ucwords(strtolower($data['middlename']));
         $admin->lastname = ucwords(strtolower($data['lastname']));
-        $admin->username = $data['username'];
         $admin->email = strtolower($data['email']);
         $admin->address = $data['address'];
         $admin->mobile = $data['mobile'];

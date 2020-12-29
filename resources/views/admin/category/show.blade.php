@@ -18,6 +18,10 @@
             @endif
         </td>
     </tr>
+    <tr>
+        <th>Display Priority</th>
+        <td>{{ $model->priority }}</td>
+    </tr>
 </table>
 
 <hr>

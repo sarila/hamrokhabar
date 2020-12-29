@@ -44,24 +44,34 @@
 					
 					<div class="account-box">
 						<div class="account-wrapper">
+							@include('admin.includes._message')
+                            @if($errors->any())
+                                <div class="alert alert-danger" >
+                                    <ul style="list-style: none; ">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                           @endif
 							<h3 class="account-title">Forgot Password?</h3>
 							<p class="account-subtitle">Enter your email to get a password reset link</p>
 							
 							<!-- Account Form -->
-							<form>
+							<form method="POST" action="{{route('forgetPassword')}}">
+								@csrf
 								<div class="form-group">
 									<label>Email Address</label>
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" name="email" id="email" >
 								</div>
 								<div class="form-group text-center">
 									<button class="btn btn-primary account-btn" type="submit">Reset Password</button>
 								</div>
-								<div class="account-footer">
-									<p>Remember your password? <a href="{{route('admin.login')}}">Login</a></p>
-								</div>
 							</form>
 							<!-- /Account Form -->
-							
+							<div class="account-footer">
+								<p>Remember your password? <a href="{{route('admin.login')}}">Login</a></p>
+							</div>
 						</div>
 					</div>
 				</div>

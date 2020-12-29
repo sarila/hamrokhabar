@@ -124,13 +124,14 @@
             var deleteFunction = $(this).attr('rel1');
             swal({
                 title: "Are You Sure? ",
-                 text: "You will not be able to recover this record again",
-            type: "warning",
-            showCancelButton: true,
+                text: "You will not be able to recover this record again",
+                type: "warning",
+                showCancelButton: true,
                 confirmButtonClass: "btn-danger",
-            confirmButtonText: "Yes, Delete it!"
+                confirmButtonText: "Yes, Delete it!"
         },
             function () {
+
                 window.location.href =  SITEURL + "/admin/" + deleteFunction + "/" + id;
             });
         });

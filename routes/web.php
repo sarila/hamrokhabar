@@ -61,6 +61,7 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/delete-category/{id}', 'CategoryController@deleteCategory')->name('deleteCategory');
 });
 
-Route::get('/forget/password', 'AdminLoginController@forgetPassword')->name('forgetPassword');
+Route::match(['get','post'], '/forget-password', 'AdminLoginController@forgetPassword')->name('forgetPassword');
+
 
 
