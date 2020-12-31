@@ -10,7 +10,7 @@
 					<a href="{{route('adminDashboard')}}"><i class="la la-arrow-left"></i> <span> Back to Dashboard</span></a>
 				</li>
 				<li>
-					<a href="{{route('adminProfile')}}"><i class="la la-user-cog"></i> <span> Profile</span></a>
+					<a href="{{route('adminProfile')}}"><i class="la la-user"></i> <span> Profile</span></a>
 				</li>
 				<li >	
 					<a href="{{route('changePassword')}}"><i class="la la-lock"></i> <span> Change Password</span> </a>

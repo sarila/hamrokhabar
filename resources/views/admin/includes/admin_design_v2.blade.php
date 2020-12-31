@@ -9,7 +9,7 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="{{ route('adminDashboard') }}" class="logo">
-						<img src="{{ asset('public/adminpanel/assets/img/logo.png') }}" width="40" height="40" alt="">
+						<img src="{{ asset('public/uploads/'.$theme->header_logo) }}" width="200" height="60" alt="">
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -28,9 +28,14 @@
 
 				<!-- Header Menu -->
 				<ul class="nav user-menu">
+					@php
+					$current_user = Auth::guard('admin')->user();
+					@endphp
 					<li class="nav-item dropdown has-arrow main-drop">
 						<a href="index.html#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img src="" alt="">
+							 <span class="user-img">
+					            <img src="{{ asset('public/uploads/admin/profile/' . $current_user->image) }}" alt="{{ $current_user->image }}">
+							<span class="status online"></span>
 							<span class="status online"></span></span>
                             <span></span>
                         </a>

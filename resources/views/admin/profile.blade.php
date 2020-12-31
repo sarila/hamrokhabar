@@ -70,12 +70,6 @@
                                 <input class="form-control" type="text" value="{{ $user->lastname }}" name="lastname" id="lastname">
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label>User Name <span class="text-danger">*</span></label>
-                                <input class="form-control" type="text" value="{{ $user->username }}" name="username" id="username">
-                            </div>
-                        </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Email Address <span class="text-danger">*</span></label>

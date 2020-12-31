@@ -59,6 +59,12 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/category/edit/{id}', 'CategoryController@editCategory')->name('editCategory');
 	Route::post('/category/edit/{id}', 'CategoryController@updateCategory')->name('updateCategory');
 	Route::get('/delete-category/{id}', 'CategoryController@deleteCategory')->name('deleteCategory');
+
+	//Tag Routes
+	Route::get('/tag', 'TagController@index')->name('tag');
+	Route::get('/tag/add', 'TagController@addTag')->name('addTag');
+	Route::post('/tag/add', 'TagController@storeTag')->name('storeTag');
+	Route::get('/tag/Datatable', 'TagController@dataTable')->name('tagDataTable');
 });
 
 Route::match(['get','post'], '/forget-password', 'AdminLoginController@forgetPassword')->name('forgetPassword');

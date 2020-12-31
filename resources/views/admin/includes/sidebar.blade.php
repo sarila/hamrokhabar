@@ -15,6 +15,9 @@
 				<li>
 					<a href="{{route('category')}}"><i class="la la-list-alt"></i> <span> Category</span></a>
 				</li>
+				<li>
+					<a href="{{route('tag')}}"><i class="la la-list"></i> <span>Tag</span></a>
+				</li>
 			</ul>
 		</div>
     </div>
