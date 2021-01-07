@@ -59,6 +59,7 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/category/edit/{id}', 'CategoryController@editCategory')->name('editCategory');
 	Route::post('/category/edit/{id}', 'CategoryController@updateCategory')->name('updateCategory');
 	Route::get('/delete-category/{id}', 'CategoryController@deleteCategory')->name('deleteCategory');
+	Route::post('ckeditor/image_upload', 'CategoryController@upload')->name('upload');
 
 	//Tag Routes
 	Route::get('/tag', 'TagController@index')->name('tag');
@@ -66,6 +67,9 @@ Route::prefix('/admin')->group(function(){
 	Route::post('/tag/add', 'TagController@storeTag')->name('storeTag');
 	Route::get('/tag/Datatable', 'TagController@dataTable')->name('tagDataTable');
 });
+
+//For add Comment and Notification
+Route::post('/comment', 'CommentController@addComment')->name('addComment');
 
 Route::match(['get','post'], '/forget-password', 'AdminLoginController@forgetPassword')->name('forgetPassword');
 

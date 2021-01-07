@@ -19,6 +19,7 @@ class CategoryController extends Controller
 
     public function addCategory(){
     	$categories = Category::where('parent_id', '0')->get();
+        $user()->notify(new NewComment());
     	return view('admin.category.add',compact('categories'));
     }
 
@@ -33,6 +34,7 @@ class CategoryController extends Controller
     	$category->category_name = $data['category_name'];
     	$category->category_name_np = $data['category_name_np'];
     	$category->slug = Str::slug($data['category_name']);
+        $category->description = $data['description'];
         $category->priority = $data['priority'];
     	$category->seo_title = $data['seo_title'];
     	$category->seo_subtitle = $data['seo_subtitle'];
@@ -89,6 +91,7 @@ class CategoryController extends Controller
     	$category->category_name_np = $data['category_name_np'];
     	$category->slug = Str::slug($data['category_name']);
         $category->priority = $data['priority'];
+        $category->description = $data['description'];
     	$category->seo_title = $data['seo_title'];
     	$category->seo_subtitle = $data['seo_subtitle'];
     	$category->seo_description = $data['seo_description'];
@@ -96,6 +99,35 @@ class CategoryController extends Controller
     	$category->save();
     	Session::flash('info_message', 'Category has been Updated Successfully');
     	return redirect()->route('category');
+    }
+
+    public function upload(Request $request)
+    {
+        if($request->hasFile('upload')) {
+            //get filename with extension
+            $filenamewithextension = $request->file('upload')->getClientOriginalName();
+      
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+      
+            //get file extension
+            $extension = $request->file('upload')->getClientOriginalExtension();
+      
+            //filename to store
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+      
+            //Upload File
+            $request->file('upload')->storeAs('public/uploads', $filenametostore);
+ 
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('storage/uploads/'.$filenametostore);
+            $msg = 'Image successfully uploaded';
+            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+             
+            // Render HTML output
+            @header('Content-type: text/html; charset=utf-8');
+            echo $re;
+        }
     }
 
     public function deleteCategory($id){

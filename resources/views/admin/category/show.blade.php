@@ -22,6 +22,14 @@
         <th>Display Priority</th>
         <td>{{ $model->priority }}</td>
     </tr>
+    <tr>
+        <th>Description</th>
+        <td>{!! $model->description !!}</td>
+    </tr>
+      <tr>
+        <th>Image</th>
+        <td><img src="{{ route('image.displayImage',$article->image_name) }}" alt="" title=""></td>
+    </tr>
 </table>
 
 <hr>

@@ -18,8 +18,17 @@
 			</div>
 		</div>
 	</div>
-		<!-- /Page Header -->
+	<!-- /Page Header -->
 </div>
-				<!-- /Page Content -->
+	<!-- /Page Content -->
+	<div>
+		<form action="{{ route('addComment')}}" method="POST">
+			@csrf
+			<label for="comment">Comment</label>
+			<input type="text" name="comment" placeholder="Comment" id="comment">
+
+			<button type="submit">Submit</button>
+		</form>
+	</div>
    
 @endsection

@@ -82,6 +82,13 @@
                                         <input type="text" class="form-control" name="priority" id="priority" value="{{ old('priority') }}">
                                     </div>
                                 </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="description">Description </label>
+                                        <textarea class="form-control" id="description" name="description" ></textarea>
+                                    </div>
+                                </div>
                             </div>
 
                             <hr>

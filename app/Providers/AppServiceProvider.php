@@ -29,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('setting', Setting::first());
         });
 
+        // View::share('global_setting',Setting::first());
+
 
     }
 
