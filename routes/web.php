@@ -66,6 +66,8 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/tag/add', 'TagController@addTag')->name('addTag');
 	Route::post('/tag/add', 'TagController@storeTag')->name('storeTag');
 	Route::get('/tag/Datatable', 'TagController@dataTable')->name('tagDataTable');
+	Route::get('/tag/edit/{id}', 'TagController@editTag')->name('editTag');
+	Route::post('/tag/edit/{id}', 'TagController@updateTag')->name('updateTag');
 });
 
 //For add Comment and Notification

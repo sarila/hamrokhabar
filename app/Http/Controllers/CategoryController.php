@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function addCategory(){
     	$categories = Category::where('parent_id', '0')->get();
-        $user()->notify(new NewComment());
+        // $user()->notify(new NewComment());
     	return view('admin.category.add',compact('categories'));
     }
 
