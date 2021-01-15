@@ -68,6 +68,8 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/tag/Datatable', 'TagController@dataTable')->name('tagDataTable');
 	Route::get('/tag/edit/{id}', 'TagController@editTag')->name('editTag');
 	Route::post('/tag/edit/{id}', 'TagController@updateTag')->name('updateTag');
+	Route::get('/delete-tag/{id}', 'TagController@deleteTag')->name('deleteTag');
+
 });
 
 //For add Comment and Notification

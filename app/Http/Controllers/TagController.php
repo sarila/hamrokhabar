@@ -78,4 +78,10 @@ class TagController extends Controller
         Session::flash('info_message', 'Tag has been updated successfully');
         return redirect()->route('tag');
     }
+
+    public function deleteTag($id){
+        $tag = Tag::Findorfail($id);
+        $tag->delete();
+        return redirect()->back();
+    }
 }

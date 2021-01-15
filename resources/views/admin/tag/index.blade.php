@@ -77,5 +77,26 @@
                 {data: 'action', name: 'action', orderable: false}
             ]
         });
+
+        // <!-- For sweet alert before delete Category -->
+
+        $('body').on('click', '.btn-delete', function (event) {
+            event.preventDefault();
+            var SITEURL = '{{URL::to('')}}';
+            var id = $(this).attr('rel');
+            var deleteFunction = $(this).attr('rel1');
+            swal({
+                title: "Are You Sure? ",
+                text: "You will not be able to recover this record again",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, Delete it!"
+        },
+            function () {
+
+                window.location.href =  SITEURL + "/admin/" + deleteFunction + "/" + id;
+            });
+        });
     </script>
 @endsection
