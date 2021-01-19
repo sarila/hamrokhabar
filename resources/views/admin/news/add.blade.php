@@ -86,6 +86,20 @@
                                     {{ old('content') }}
                                 </textarea>
                             </div>
+                            <div class="row">
+                               <div class="col-md-12">
+                                   <div class="form-group">
+                                       <label for="tag_id">Select Tags</label>
+                                       <select name="tag_id[]" id="tag_id" class="form-control select-tags" required multiple>
+                                           @foreach ($tags as $tag)
+                                               <option value="{{ $tag->id }}"> {{ $tag->name }} </option>
+                                           @endforeach
+                                       </select>
+                                       
+                                   </div>
+                               </div>
+                           </div>
+
                             <hr>
                             <h4 class=" text-uppercase">
                                 SEO Settings
@@ -147,7 +161,6 @@
         });
     </script>
 
-
     <script>
         function readURL(input){
             if (input.files && input.files[0]) {
@@ -162,4 +175,28 @@
         }
 
     </script>
+
+    {!! Toastr::message() !!}
+
+    <script>
+        @if($errors->any())
+        @foreach($errors->all() as $error)
+        toastr.error('{{ $error }}', 'Error', {
+            closeButton : true,
+            progressBar : true,
+        });
+        @endforeach
+        @endif
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script>
+        $('.select-tags').select2({
+            placeholder: 'Select Tags',
+        });
+    </script>
+
+
+
+
 @endsection

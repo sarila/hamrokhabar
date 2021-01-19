@@ -34,7 +34,6 @@ class CategoryController extends Controller
     	$category->category_name = $data['category_name'];
     	$category->category_name_np = $data['category_name_np'];
     	$category->slug = Str::slug($data['category_name']);
-        $category->description = $data['description'];
         $category->priority = $data['priority'];
     	$category->seo_title = $data['seo_title'];
     	$category->seo_subtitle = $data['seo_subtitle'];
