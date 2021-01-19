@@ -32,8 +32,9 @@
 		<link rel="stylesheet" href="{{ asset('public/adminPanel/assets/css/dataTables.bootstrap4.min.css') }}">
 		<!-- CSS for sweetalert -->
 		<link rel="stylesheet" href="{{ asset('public/adminPanel/assets/css/sweetalert.css') }}">
-		<!-- Toaster -->
+        <!-- Toaster -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
 		<!-- CSS for select 2 -->
 		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />

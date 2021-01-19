@@ -173,22 +173,9 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
     </script>
 
-    {!! Toastr::message() !!}
-
-    <script>
-        @if($errors->any())
-        @foreach($errors->all() as $error)
-        toastr.error('{{ $error }}', 'Error', {
-            closeButton : true,
-            progressBar : true,
-        });
-        @endforeach
-        @endif
-    </script>
-
+    <!-- Select Multiple Tags using select 2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <script>
         $('.select-tags').select2({

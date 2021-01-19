@@ -30,7 +30,8 @@
 		
 		<!-- for Multiple tags(Select 2) -->
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
-	@yield('js')
+    	
+		@yield('js')
 		
     </body>
 </html>
