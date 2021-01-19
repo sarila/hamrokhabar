@@ -23,14 +23,7 @@
 		<script src="{{ asset('public/adminPanel/assets/js/sweetalert.min.js') }}"></script>
 		<script src="{{ asset('public/adminPanel/assets/js/jquery.sweet-alert.custom.js') }}"></script>
 
-		<!-- Tiny MCE Text Editor -->
-		<script src="{{ asset('public/ckeditor/ckeditor.js') }}"></script>		
-		<script>
-			CKEDITOR.replace( 'description', {
-			    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-			    filebrowserUploadMethod: 'form'
-			});
-		</script>
+		
 	@yield('js')
 		
     </body>

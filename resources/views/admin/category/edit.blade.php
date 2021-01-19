@@ -79,14 +79,7 @@
                                         <label for="priority">Display Priority</label>
                                         <input type="text" class="form-control" name="priority" id="priority" value="{{$category->priority}}">
                                     </div>
-                                </div> 
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="priority">Description</label>
-                                        <textarea type="text" class="form-control" name="description" id="description">{{$category->description}}</textarea> 
-                                    </div>
-                                </div>      
+                                </div>   
                             </div>
 
                             <hr>

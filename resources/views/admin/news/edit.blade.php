@@ -13,7 +13,7 @@
         <div class="page-header">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="page-title">Categories</h3>
+                    <h3 class="page-title">Update Categories</h3>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('adminDashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active">Add New</li>
@@ -52,11 +52,9 @@
                                     <div class="form-group">
                                         <label for="parent_id">Parent Category </label>
                                         <select name="parent_id" id="parent_id" class="form-control select">
-                                            <option value="0">Main Category</option>
-                                            @foreach($categories as $category)
-                                                @if( $category->parent_id == 0)
-                                                <option value= " {{$category->id}} ">{{$category->category_name}}</option>
-                                                @endif
+                                            <option value="0" @if($category->parent_id == 0) selected @endif>Main Category</option>
+                                            @foreach($categories as $cat)                                             
+                                                <option value= " {{$cat->id}} " @if($category->parent_id == $cat->id) selected @endif>{{$cat->category_name}}</option>                                   
                                             @endforeach
                                         </select>
                                     </div>
@@ -65,23 +63,30 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="category_name">Category Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="category_name" id="category_name" value="{{ old('category_name') }}">
+                                        <input type="text" class="form-control" name="category_name" id="category_name" value="{{$category->category_name}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="category_name_np">Category Name (नेपाली) <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="category_name_np" id="category_name_np" value="{{ old('category_name_np') }}">
+                                        <input type="text" class="form-control" name="category_name_np" id="category_name_np" value="{{$category->category_name_np}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="priority">Display Priority </label>
-                                        <input type="text" class="form-control" name="priority" id="priority" value="{{ old('priority') }}">
+                                        <label for="priority">Display Priority</label>
+                                        <input type="text" class="form-control" name="priority" id="priority" value="{{$category->priority}}">
                                     </div>
-                                </div>
+                                </div> 
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="priority">Description</label>
+                                        <textarea type="text" class="form-control" name="description" id="description">{{$category->description}}</textarea> 
+                                    </div>
+                                </div>      
                             </div>
 
                             <hr>
@@ -93,33 +98,33 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="seo_title" style="font-size: 14px">SEO Title</label>
-                                        <input class="form-control" type="text" name="seo_title" id="seo_title" value="{{ old('seo_title') }}" >
+                                        <input class="form-control" type="text" name="seo_title" id="seo_title" value="{{$category->seo_title}}" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="seo_subtitle" style="font-size: 14px">SEO Sub Title</label>
-                                        <input class="form-control" type="text" name="seo_subtitle" id="seo_subtitle" value="{{old('seo_subtitle')}}">
+                                        <input class="form-control" type="text" name="seo_subtitle" id="seo_subtitle" value="{{$category->seo_subtitle}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="description" style="font-size: 14px">SEO Description</label>
-                                        <input class="form-control" type="text" name="seo_description" id="seo_description" value="{{old('seo_description')}}" >
+                                        <input class="form-control" type="text" name="seo_description" id="seo_description" value="{{$category->seo_description}}" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="keywords" style="font-size: 14px">SEO Keywords</label>
-                                        <input class="form-control" type="text" name="keywords" id="keywords" value="{{old('keywords')}} " >
+                                        <input class="form-control" type="text" name="keywords" id="keywords" value="{{$category->keywords}}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Add Category</button>
+                                    <button type="submit" class="btn btn-primary">Update Category</button>
                                 </div>
                             </div>
                         </form>

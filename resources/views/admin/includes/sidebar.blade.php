@@ -18,6 +18,17 @@
 				<li>
 					<a href="{{route('tag')}}"><i class="la la-tag"></i> <span>Tag</span></a>
 				</li>
+
+
+				<li class="submenu">
+					<a href="javascript:" class=""><i class="la la-newspaper-o"></i> <span>News</span> <span class="menu-arrow"></span></a>
+					<ul style="display: none;">
+						<li class=""><a href="{{ route('news') }}">Published News</a></li>
+						<li class=""><a href="{{ route('news') }}">Draft News</a></li>
+						<li class=""><a href="{{ route('news') }}">Deleted News</a></li>
+						<li class=""><a href="{{ route('addNews') }}">Add News</a></li>
+					</ul>
+				</li>
 			</ul>
 		</div>
     </div>
